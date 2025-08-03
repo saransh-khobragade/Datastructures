@@ -23,4 +23,10 @@ console.log(arr.join(" "));  // Hello World
 let str = "Saransh";
 console.log(str[1]);  // a from index 1 only one element
 console.log(str[str.length - 2]);  // s from last second index only one element
-console.log(str.substring(2, 5));  // ran [including:excluding] 
+console.log(str.substring(2, 5));  // ran [including:excluding]
+
+// Triming a string----------------------------------------
+str = "   Hello, World!   ";
+console.log(str.trim());  // "Hello, World!" (removes leading and trailing spaces)
+console.log(str.trimStart());  // "Hello, World!   " (removes leading spaces)
+console.log(str.trimEnd());  // "   Hello, World!" (removes trailing spaces) 

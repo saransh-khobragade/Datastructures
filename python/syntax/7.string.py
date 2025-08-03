@@ -23,3 +23,9 @@ str = "Saransh"
 print(str[1])  # a from index 1 only one element
 print(str[-2])  # s from last second index only one element
 print(str[2:5])  # llo [including:excluding]
+
+# Triming a string----------------------------------------
+str = "   Hello, World!   "
+print(str.strip())  # "Hello, World!" (removes leading and trailing spaces)
+print(str.lstrip())  # "Hello, World!   " (removes leading spaces)
+print(str.rstrip())  # "   Hello, World!" (removes trailing spaces)
