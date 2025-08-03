@@ -1,31 +1,25 @@
-#LENGTH OF STRING----------------------------------------
+# LENGTH OF STRING----------------------------------------
 a = "Hello, World!"
-print(len(a)) #13
+print(len(a))  # 13
 
-#CHECK IN STRING----------------------------------------
+# CHECK IN STRING----------------------------------------
 txt = "The best things in life are free!"
 if "free" in txt:
-  print("Yes, 'free' is present.")
+    print("Yes, 'free' is present.")
 if "abc" not in txt:
-  print("Yes, 'abc' not is present.")
+    print("Yes, 'abc' not is present.")
 
+# Splitting a string into array----------------------------------------
+txt = "Hello, World!"
+print(list(txt))  # ['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']
+# ['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']
 
-#SLICE----------------------------------------------------
-#Saransh
-#0123456
+# Joining a list into a string----------------------------------------
+arr = ["Hello", "World"]
+print(" ".join(arr))  # Hello World
 
+# Slicing a string----------------------------------------
 str = "Saransh"
-print(str[1])   #a from index 1 only one element
-print(str[-2])  #s from last second index only one element
-print(str[2:5]) #llo [including:excluding]
-
-
-#sorted()----------------------------------------------------
-print(sorted("abc")) #['a', 'b', 'c']
-
-#converting list to integers to single string
-''.join(list(map(str,arr)))
-
-#getting a string from list
-w = "".join(input().split())
-
+print(str[1])  # a from index 1 only one element
+print(str[-2])  # s from last second index only one element
+print(str[2:5])  # llo [including:excluding]

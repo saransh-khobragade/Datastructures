@@ -10,20 +10,27 @@ The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "Ac
 class Solution:
     def reverseVowels(self, s: str) -> str:
         vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
-        str = s.split()
-        print(str)
+        str = list(s)
         start = 0
         end = len(s) - 1
         while start < end:
             if s[start] in vowels and s[end] in vowels:
-                s[start], s[end] = s[end], s[start]
-            elif s[start] not in vowels:
+                str[start], str[end] = str[end], str[start]
                 start += 1
-            elif s[end] not in vowels:
+                end -= 1
+            elif str[start] not in vowels:
+                start += 1
+            elif str[end] not in vowels:
                 end -= 1
 
-        return s
+        return "".join(str)
 
 
 s = Solution()
 print(s.reverseVowels("IceCreAm"))
+
+"""
+Time complexity: O(N)
+Space complexity: O(N)
+where N is the length of the input string.
+"""
