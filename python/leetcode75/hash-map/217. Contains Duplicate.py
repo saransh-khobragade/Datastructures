@@ -16,15 +16,15 @@ a = Solution()
 
 print(a.containsDuplicate(nums))
 
+"""
+Time complexity: O(N)
+Space complexity: O(N)
+where N is the length of the input array.
+"""
+
 
 """
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 Input: nums = [1,2,3,1]
 Output: true
 """
-
-"""
-Time complexity: O(N)
-Space complexity: O(N)
-where N is the length of the input array.
-""" 

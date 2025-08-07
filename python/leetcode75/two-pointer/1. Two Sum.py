@@ -12,8 +12,3 @@ target = 6
 s = Solution()
 print(s.twoSum(nums,target))
 
-"""
-Time complexity: O(N²)
-Space complexity: O(1)
-where N is the length of the input array.
-""" 
