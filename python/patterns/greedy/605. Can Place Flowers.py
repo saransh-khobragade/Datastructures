@@ -33,4 +33,5 @@ print(s.canPlaceFlowers([0, 0, 1, 0, 0], 1))
 Time complexity: O(N)
 Space complexity: O(1)
 where N is the length of the input array.
+Approach: Greedy because solution for the remaining spots doesn't depend on how we filled earlier spots
 """
