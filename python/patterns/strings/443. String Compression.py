@@ -13,15 +13,38 @@ Explanation: The groups are "aa", "bb", and "ccc". This compresses to "a2b2c3".
 
 from typing import List
 
+
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        hmap = {}
-        for x in chars:
-            if x in hmap:
-                hmap[x]+=1
-            elif:
-                hmap[x] =1
-        return hmap
+        i = j = 0
+        result = ""
+
+        if len(chars) == 1:
+            return 1
+
+        while i < len(chars) and j < len(chars):
+
+            if chars[j] == chars[i]:
+                j += 1
+            else:
+                if j - i > 1:
+                    result += chars[i] + f"{j-i}"
+                else:
+                    result += chars[i]
+
+                i = j
+        if j - i > 1:
+            result += chars[i] + f"{j-i}"
+        else:
+            result += chars[i]
+
+        for i in range(len(result)):
+            chars[i] = result[i]
+
+        chars = chars[0 : len(result)]
+        # print(chars)
+        return len(result)
+
 
 s = Solution()
-print(s.compress(["a", "a", "b", "b", "c", "c", "c"]))
+print(s.compress(["a", "b", "c"]))

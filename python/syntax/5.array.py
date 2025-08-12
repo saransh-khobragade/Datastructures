@@ -65,7 +65,16 @@ print(reduced_value)  # 15
 squared_arr = [x**2 for x in arr]
 print(squared_arr)  # [1, 4, 9, 16, 25]
 
-# SLICES
+# Destructure array
+arr = ["apple", "banana"]
+a, b = arr
+print(a, b)  # apple banana
+
+# Swap
+a, b = b, a
+print(a, b)  # banana apple
+
+# Slices
 arr = ["apple", "banana", "cherry", "berry", "carry"]
 
 # Slicing (start-included : end-excluded)

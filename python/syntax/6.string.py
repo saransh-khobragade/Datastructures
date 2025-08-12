@@ -1,3 +1,14 @@
+# String interpolation
+abc = f"Hello {10}"
+print(abc)
+
+# Multi line string
+multi_line_string = """
+This is a multi line string
+This is a multi line string"""
+print(multi_line_string)
+
+
 # LENGTH OF STRING----------------------------------------
 a = "Hello, World!"
 print(len(a))  # 13
