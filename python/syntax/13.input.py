@@ -22,3 +22,4 @@ try:
     print(f"Single integer: {single_num}")
 except ValueError:
     print("Error: Please enter a valid integer")
+
