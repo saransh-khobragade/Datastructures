@@ -2,168 +2,74 @@
 
 A comprehensive collection of data structures and algorithms implemented in multiple programming languages: Python, Java, JavaScript, and Go.
 
-## 📁 Folder Structure
+## 📁 Files
 
-```
-Python-datastructures/
-├── python/
-│   ├── datastructures/
-│   │   ├── [binary_tree.py](python/datastructures/binary_tree.py)
-│   │   ├── [graph.py](python/datastructures/graph.py)
-│   │   ├── [linked_list.py](python/datastructures/linked_list.py)
-│   │   ├── [min_heap.py](python/datastructures/min_heap.py)
-│   │   ├── [queue.py](python/datastructures/queue.py)
-│   │   └── [stack.py](python/datastructures/stack.py)
-│   ├── patterns/
-│   │   ├── arrays/
-│   │   │   ├── [1431. Kids With the Greatest Number of Candies.py](python/patterns/arrays/1431.%20Kids%20With%20the%20Greatest%20Number%20of%20Candies.py)
-│   │   │   └── [36. Valid Sudoku.py](python/patterns/arrays/36.%20Valid%20Sudoku.py)
-│   │   ├── backtracking-recursion/
-│   │   │   ├── [39. Combination Sum.py](python/patterns/backtracking-recursion/39.%20Combination%20Sum.py)
-│   │   │   ├── [46. Permutations.py](python/patterns/backtracking-recursion/46.%20Permutations.py)
-│   │   │   ├── [7. Permutations II.py](python/patterns/backtracking-recursion/7.%20Permutations%20II.py)
-│   │   │   └── [77. Combinations.py](python/patterns/backtracking-recursion/77.%20Combinations.py)
-│   │   ├── greedy/
-│   │   │   ├── [334. Increasing Triplet Subsequence.py](python/patterns/greedy/334.%20Increasing%20Triplet%20Subsequence.py)
-│   │   │   └── [605. Can Place Flowers.py](python/patterns/greedy/605.%20Can%20Place%20Flowers.py)
-│   │   ├── hash-map/
-│   │   │   ├── [1. Two Sum.py](python/patterns/hash-map/1.%20Two%20Sum.py)
-│   │   │   ├── [128. Longest Consecutive Sequence.py](python/patterns/hash-map/128.%20Longest%20Consecutive%20Sequence.py)
-│   │   │   ├── [217. Contains Duplicate.py](python/patterns/hash-map/217.%20Contains%20Duplicate.py)
-│   │   │   ├── [242. Valid Anagram.py](python/patterns/hash-map/242.%20Valid%20Anagram.py)
-│   │   │   ├── [347. Top K Frequent Elements.py](python/patterns/hash-map/347.%20Top%20K%20Frequent%20Elements.py)
-│   │   │   └── [49. Group Anagrams.py](python/patterns/hash-map/49.%20Group%20Anagrams.py)
-│   │   ├── strings/
-│   │   │   ├── [1071. Greatest Common Divisor of Strings.py](python/patterns/strings/1071.%20Greatest%20Common%20Divisor%20of%20Strings.py)
-│   │   │   ├── [151. Reverse Words in a String.py](python/patterns/strings/151.%20Reverse%20Words%20in%20a%20String.py)
-│   │   │   ├── [1768. Merge Strings Alternately.py](python/patterns/strings/1768.%20Merge%20Strings%20Alternately.py)
-│   │   │   └── [443. String Compression.py](python/patterns/strings/443.%20String%20Compression.py)
-│   │   └── two-pointer/
-│   │       ├── [238. Product of Array Except Self.py](python/patterns/two-pointer/238.%20Product%20of%20Array%20Except%20Self.py)
-│   │       └── [345. Reverse Vowels of a String.py](python/patterns/two-pointer/345.%20Reverse%20Vowels%20of%20a%20String.py)
-│   ├── [playground.py](python/playground.py)
-│   └── syntax/
-│       ├── [1.log-comments.py](python/syntax/1.log-comments.py)
-│       ├── [10.classes.py](python/syntax/10.classes.py)
-│       ├── [11.try-catch.py](python/syntax/11.try-catch.py)
-│       ├── [12.Exceptions-errors.py](python/syntax/12.Exceptions-errors.py)
-│       ├── [13.input.py](python/syntax/13.input.py)
-│       ├── [14.type-checking.py](python/syntax/14.type-checking.py)
-│       ├── [15.randomize.py](python/syntax/15.randomize.py)
-│       ├── [16.json-handling.py](python/syntax/16.json-handling.py)
-│       ├── [17.casting.py](python/syntax/17.casting.py)
-│       ├── [18.regex.py](python/syntax/18.regex.py)
-│       ├── [19.date.py](python/syntax/19.date.py)
-│       ├── [2.if-else-switch.py](python/syntax/2.if-else-switch.py)
-│       ├── [20.asscii.py](python/syntax/20.asscii.py)
-│       ├── [3.variables.py](python/syntax/3.variables.py)
-│       ├── [4.operators.py](python/syntax/4.operators.py)
-│       ├── [5.array.py](python/syntax/5.array.py)
-│       ├── [6.string.py](python/syntax/6.string.py)
-│       ├── [7.hash-map.py](python/syntax/7.hash-map.py)
-│       ├── [8.loops.py](python/syntax/8.loops.py)
-│       ├── [9.funtions.py](python/syntax/9.funtions.py)
-│       ├── [async.py](python/syntax/async.py)
-│       ├── [set.py](python/syntax/set.py)
-│       ├── [sync.py](python/syntax/sync.py)
-│       └── [tupple.py](python/syntax/tupple.py)
-├── java/
-│   ├── datastructures/
-│   │   ├── [BinaryTree.java](java/datastructures/BinaryTree.java)
-│   │   ├── [Graph.java](java/datastructures/Graph.java)
-│   │   ├── [LinkedList.java](java/datastructures/LinkedList.java)
-│   │   ├── [MinHeap.java](java/datastructures/MinHeap.java)
-│   │   ├── [Queue.java](java/datastructures/Queue.java)
-│   │   └── [Stack.java](java/datastructures/Stack.java)
-│   └── syntax/
-│       ├── [1.LogComments.java](java/syntax/1.LogComments.java)
-│       ├── [10.Classes.java](java/syntax/10.Classes.java)
-│       ├── [11.TryCatch.java](java/syntax/11.TryCatch.java)
-│       ├── [12.ExceptionsErrors.java](java/syntax/12.ExceptionsErrors.java)
-│       ├── [13.Input.java](java/syntax/13.Input.java)
-│       ├── [14.TypeChecking.java](java/syntax/14.TypeChecking.java)
-│       ├── [15.Randomize.java](java/syntax/15.Randomize.java)
-│       ├── [16.JsonHandling.java](java/syntax/16.JsonHandling.java)
-│       ├── [17.Casting.java](java/syntax/17.Casting.java)
-│       ├── [18.Regex.java](java/syntax/18.Regex.java)
-│       ├── [19.Date.java](java/syntax/19.Date.java)
-│       ├── [2.IfElseSwitch.java](java/syntax/2.IfElseSwitch.java)
-│       ├── [20.Ascii.java](java/syntax/20.Ascii.java)
-│       ├── [3.Variables.java](java/syntax/3.Variables.java)
-│       ├── [4.Operators.java](java/syntax/4.Operators.java)
-│       ├── [5.Arrays.java](java/syntax/5.Arrays.java)
-│       ├── [6.Strings.java](java/syntax/6.Strings.java)
-│       ├── [7.HashMap.java](java/syntax/7.HashMap.java)
-│       ├── [8.Loops.java](java/syntax/8.Loops.java)
-│       ├── [9.Functions.java](java/syntax/9.Functions.java)
-│       ├── [Async.java](java/syntax/Async.java)
-│       ├── [Set.java](java/syntax/Set.java)
-│       ├── [Sync.java](java/syntax/Sync.java)
-│       └── [Tuple.java](java/syntax/Tuple.java)
-├── javascript/
-│   ├── datastructures/
-│   │   ├── [binary-tree.js](javascript/datastructures/binary-tree.js)
-│   │   ├── [graph.js](javascript/datastructures/graph.js)
-│   │   ├── [linked-list.js](javascript/datastructures/linked-list.js)
-│   │   ├── [min-heap.js](javascript/datastructures/min-heap.js)
-│   │   ├── [queue.js](javascript/datastructures/queue.js)
-│   │   └── [stack.js](javascript/datastructures/stack.js)
-│   └── syntax/
-│       ├── [1.log-comments.js](javascript/syntax/1.log-comments.js)
-│       ├── [10.classes.js](javascript/syntax/10.classes.js)
-│       ├── [11.try-catch.js](javascript/syntax/11.try-catch.js)
-│       ├── [12.exceptions-errors.js](javascript/syntax/12.exceptions-errors.js)
-│       ├── [13.input.js](javascript/syntax/13.input.js)
-│       ├── [14.type-checking.js](javascript/syntax/14.type-checking.js)
-│       ├── [15.randomize.js](javascript/syntax/15.randomize.js)
-│       ├── [16.json-handling.js](javascript/syntax/16.json-handling.js)
-│       ├── [17.casting.js](javascript/syntax/17.casting.js)
-│       ├── [18.regex.js](javascript/syntax/18.regex.js)
-│       ├── [19.date.js](javascript/syntax/19.date.js)
-│       ├── [2.if-else-switch.js](javascript/syntax/2.if-else-switch.js)
-│       ├── [20.ascii.js](javascript/syntax/20.ascii.js)
-│       ├── [3.variables.js](javascript/syntax/3.variables.js)
-│       ├── [4.operators.js](javascript/syntax/4.operators.js)
-│       ├── [5.arrays.js](javascript/syntax/5.arrays.js)
-│       ├── [6.strings.js](javascript/syntax/6.strings.js)
-│       ├── [7.hashmap.js](javascript/syntax/7.hashmap.js)
-│       ├── [8.loops.js](javascript/syntax/8.loops.js)
-│       ├── [9.functions.js](javascript/syntax/9.functions.js)
-│       ├── [async.js](javascript/syntax/async.js)
-│       ├── [set.js](javascript/syntax/set.js)
-│       ├── [sync.js](javascript/syntax/sync.js)
-│       └── [tuple.js](javascript/syntax/tuple.js)
-└── go/
-    ├── datastructures/
-    │   ├── [binarytree.go](go/datastructures/binarytree.go)
-    │   ├── [graph.go](go/datastructures/graph.go)
-    │   ├── [linkedlist.go](go/datastructures/linkedlist.go)
-    │   ├── [minheap.go](go/datastructures/minheap.go)
-    │   ├── [queue.go](go/datastructures/queue.go)
-    │   └── [stack.go](go/datastructures/stack.go)
-    └── syntax/
-        ├── [1.log-comments.go](go/syntax/1.log-comments.go)
-        ├── [10.classes.go](go/syntax/10.classes.go)
-        ├── [11.try-catch.go](go/syntax/11.try-catch.go)
-        ├── [12.exceptions-errors.go](go/syntax/12.exceptions-errors.go)
-        ├── [13.input.go](go/syntax/13.input.go)
-        ├── [14.type-checking.go](go/syntax/14.type-checking.go)
-        ├── [15.randomize.go](go/syntax/15.randomize.go)
-        ├── [16.json-handling.go](go/syntax/16.json-handling.go)
-        ├── [17.casting.go](go/syntax/17.casting.go)
-        ├── [18.regex.go](go/syntax/18.regex.go)
-        ├── [19.date.go](go/syntax/19.date.go)
-        ├── [2.if-else-switch.go](go/syntax/2.if-else-switch.go)
-        ├── [20.ascii.go](go/syntax/20.ascii.go)
-        ├── [3.variables.go](go/syntax/3.variables.go)
-        ├── [4.operators.go](go/syntax/4.operators.go)
-        ├── [5.arrays.go](go/syntax/5.arrays.go)
-        ├── [6.strings.go](go/syntax/6.strings.go)
-        ├── [7.hashmap.go](go/syntax/7.hashmap.go)
-        ├── [8.loops.go](go/syntax/8.loops.go)
-        ├── [9.functions.go](go/syntax/9.functions.go)
-        ├── [async.go](go/syntax/async.go)
-        ├── [set.go](go/syntax/set.go)
-        ├── [sync.go](go/syntax/sync.go)
-        └── [tuple.go](go/syntax/tuple.go)
-```
+### 🐍 Python
+
+#### Data Structures
+- [binary_tree.py](python/datastructures/binary_tree.py) - Binary Tree and Binary Search Tree implementation
+- [graph.py](python/datastructures/graph.py) - Graph data structure and algorithms
+- [linked_list.py](python/datastructures/linked_list.py) - Linked List implementation
+- [min_heap.py](python/datastructures/min_heap.py) - Min Heap/Priority Queue
+- [queue.py](python/datastructures/queue.py) - Queue data structure
+- [stack.py](python/datastructures/stack.py) - Stack data structure
+
+#### Algorithm Patterns
+**Arrays**
+- [1431. Kids With the Greatest Number of Candies.py](python/patterns/arrays/1431.%20Kids%20With%20the%20Greatest%20Number%20of%20Candies.py)
+- [36. Valid Sudoku.py](python/patterns/arrays/36.%20Valid%20Sudoku.py)
+
+**Backtracking & Recursion**
+- [39. Combination Sum.py](python/patterns/backtracking-recursion/39.%20Combination%20Sum.py)
+- [46. Permutations.py](python/patterns/backtracking-recursion/46.%20Permutations.py)
+- [7. Permutations II.py](python/patterns/backtracking-recursion/7.%20Permutations%20II.py)
+- [77. Combinations.py](python/patterns/backtracking-recursion/77.%20Combinations.py)
+
+**Greedy Algorithms**
+- [334. Increasing Triplet Subsequence.py](python/patterns/greedy/334.%20Increasing%20Triplet%20Subsequence.py)
+- [605. Can Place Flowers.py](python/patterns/greedy/605.%20Can%20Place%20Flowers.py)
+
+**Hash Map**
+- [1. Two Sum.py](python/patterns/hash-map/1.%20Two%20Sum.py)
+- [128. Longest Consecutive Sequence.py](python/patterns/hash-map/128.%20Longest%20Consecutive%20Sequence.py)
+- [217. Contains Duplicate.py](python/patterns/hash-map/217.%20Contains%20Duplicate.py)
+- [242. Valid Anagram.py](python/patterns/hash-map/242.%20Valid%20Anagram.py)
+- [347. Top K Frequent Elements.py](python/patterns/hash-map/347.%20Top%20K%20Frequent%20Elements.py)
+- [49. Group Anagrams.py](python/patterns/hash-map/49.%20Group%20Anagrams.py)
+
+**Strings**
+- [1071. Greatest Common Divisor of Strings.py](python/patterns/strings/1071.%20Greatest%20Common%20Divisor%20of%20Strings.py)
+- [151. Reverse Words in a String.py](python/patterns/strings/151.%20Reverse%20Words%20in%20a%20String.py)
+- [1768. Merge Strings Alternately.py](python/patterns/strings/1768.%20Merge%20Strings%20Alternately.py)
+- [443. String Compression.py](python/patterns/strings/443.%20String%20Compression.py)
+
+**Two Pointer**
+- [238. Product of Array Except Self.py](python/patterns/two-pointer/238.%20Product%20of%20Array%20Except%20Self.py)
+- [345. Reverse Vowels of a String.py](python/patterns/two-pointer/345.%20Reverse%20Vowels%20of%20a%20String.py)
+
+#### Syntax Examples
+- [playground.py](python/playground.py) - Python playground file
+- [1.log-comments.py](python/syntax/1.log-comments.py) - Logging and comments
+- [2.if-else-switch.py](python/syntax/2.if-else-switch.py) - Control structures
+- [3.variables.py](python/syntax/3.variables.py) - Variables and data types
+- [4.operators.py](python/syntax/4.operators.py) - Operators
+- [5.array.py](python/syntax/5.array.py) - Arrays and lists
+- [6.string.py](python/syntax/6.string.py) - String manipulation
+- [7.hash-map.py](python/syntax/7.hash-map.py) - Dictionaries and hash maps
+- [8.loops.py](python/syntax/8.loops.py) - Loops and iteration
+- [9.funtions.py](python/syntax/9.funtions.py) - Functions
+- [10.classes.py](python/syntax/10.classes.py) - Classes and OOP
+- [11.try-catch.py](python/syntax/11.try-catch.py) - Exception handling
+- [12.Exceptions-errors.py](python/syntax/12.Exceptions-errors.py) - Error handling
+- [13.input.py](python/syntax/13.input.py) - Input/output operations
+- [14.type-checking.py](python/syntax/14.type-checking.py) - Type checking
+- [15.randomize.py](python/syntax/15.randomize.py) - Random number generation
+- [16.json-handling.py](python/syntax/16.json-handling.py) - JSON operations
+- [17.casting.py](python/syntax/17.casting.py) - Type casting
+- [18.regex.py](python/syntax/18.regex.py) - Regular expressions
+- [19.date.py](python/syntax/19.date.py) - Date and time
+- [20.asscii.py](python/syntax/20.asscii.py) - ASCII operations
+- [async.py](python/syntax/async.py) - Asynchronous programming
+- [set.py](python/syntax/set.py) - Sets
+- [sync.py](python/syntax/sync.py) - Synchronous operations
+- [tupple.py](python/syntax/tupple.py) - Tuples
