@@ -16,35 +16,42 @@ from typing import List
 
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        i = j = 0
-        result = ""
-
+        if len(chars) == 0:
+            return 0
         if len(chars) == 1:
             return 1
 
-        while i < len(chars) and j < len(chars):
+        read = 0
+        write = 0
 
-            if chars[j] == chars[i]:
-                j += 1
-            else:
-                if j - i > 1:
-                    result += chars[i] + f"{j-i}"
+        while read < len(chars):
+            count = 0
+            curr = chars[read]
+
+            while read < len(chars) and chars[read] == curr:
+                read += 1
+                count += 1
+
+            chars[write] = curr
+            write += 1
+
+            if count > 1:
+                if count < 10:
+                    chars[write] = str(count)
+                    write += 1
                 else:
-                    result += chars[i]
+                    chars[write : write + len(str(count))] = list(str(count))
+                    write += len(str(count))
 
-                i = j
-        if j - i > 1:
-            result += chars[i] + f"{j-i}"
-        else:
-            result += chars[i]
-
-        for i in range(len(result)):
-            chars[i] = result[i]
-
-        chars = chars[0 : len(result)]
-        # print(chars)
-        return len(result)
+        return write
 
 
 s = Solution()
-print(s.compress(["a", "b", "c"]))
+v = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]
+print(s.compress(v))
+print(v)
+
+"""
+Time Complexity: O(n)
+Space Complexity: O(1)
+"""
