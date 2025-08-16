@@ -27,6 +27,11 @@ class Solution:
         while read < len(chars):
             count = 0
             curr = chars[read]
+            if chars[read] == curr:
+                read += 1
+                count += 1
+            else:
+                curr
 
             while read < len(chars) and chars[read] == curr:
                 read += 1
@@ -47,11 +52,6 @@ class Solution:
 
 
 s = Solution()
-v = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"]
+v = ["a", "a", "b", "b", "c", "c", "c"]
 print(s.compress(v))
 print(v)
-
-"""
-Time Complexity: O(n)
-Space Complexity: O(1)
-"""
