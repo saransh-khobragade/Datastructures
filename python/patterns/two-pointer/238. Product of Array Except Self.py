@@ -1,31 +1,34 @@
-# https://leetcode.com/problems/product-of-array-except-self/
-# Input: nums = [1,2,3,4]
-# Output: [24,12,8,6]
-
+"""
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+You must write an algorithm that runs in O(n) time and without using the division operation.
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+"""
 from typing import List
-
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        result = [1] * n
+        leftArr = [1]*len(nums)
+        rightArr =  [1]*len(nums)
+
+        left = 1
+        for i in range(0,len(nums)-1):
+            leftArr[i] = nums[i] * left
+            left *= nums[i]
         
-        # Calculate prefix products
-        for i in range(1, n):
-            result[i] = result[i-1] * nums[i-1]
+        right = 1
         
-        # Calculate suffix products and combine
-        suffix = 1
-        for i in range(n-1, -1, -1):
-            result[i] = result[i] * suffix
-            suffix *= nums[i]
+        for i in range(len(nums)-1,-1,-1):
+            rightArr[i] = leftArr[i - 1] * right
+            right *= nums[i]
+
+        return rightArr
         
-        return result
+
 
 s = Solution()
-print(s.productExceptSelf([1,2,3,4]))
+s.productExceptSelf([1,2,3,4])
 
-"""
-Time complexity: O(N)
-Space complexity: O(1) - excluding the output array
-where N is the length of the input array.
-""" 
+# 1     2   6   1  left products
+# 1     2   3   4
+# 24    12  8   6   right products

@@ -6,21 +6,30 @@ console.log(arr[0]); // apple
 // Length
 console.log(arr.length); // 5
 
-// Add item
+// Add item, adds to the end
 arr.push("pineapple");
 console.log(arr); // ['apple', 'banana', 'cherry', 'berry', 'carry', 'pineapple']
 
-// Insert at index
+// Insert at index, adds "potatoe" at index 2 , changes original array
 arr.splice(2, 0, "potatoe");
 console.log(arr); // ['apple', 'banana', 'potatoe', 'cherry', 'berry', 'carry', 'pineapple']
 
-// Extend/merge
+// Extend/merge, spread operator
 const arr2 = ["kiwi", "orange"];
 arr.push(...arr2);
 console.log(arr);
 // ['apple', 'banana', 'potatoe', 'cherry', 'berry', 'carry', 'pineapple', 'kiwi', 'orange']
 
-// Remove item
+// Find index, returns -1 if not found
+console.log(arr.indexOf("cherry")); // 3
+
+// Check existence, returns boolean
+console.log(arr.includes("banana")); // true
+
+// find item, returns first match item
+console.log(arr.find(element => element.startsWith("b"))); // banana
+
+// Remove item, returns removed item
 const appleIndex = arr.indexOf("apple");
 if (appleIndex > -1) {
     arr.splice(appleIndex, 1);
@@ -28,7 +37,7 @@ if (appleIndex > -1) {
 console.log(arr);
 // ['banana', 'potatoe', 'cherry', 'berry', 'carry', 'pineapple', 'kiwi', 'orange']
 
-// Remove at index
+// Remove at index, removes 1 item at index 0, returns removed item, changes original array
 arr.splice(0, 1);
 console.log(arr); // ['potatoe', 'cherry', 'berry', 'carry', 'pineapple', 'kiwi', 'orange']
 
@@ -71,18 +80,18 @@ console.log(a, b); // banana apple
 // Slices
 const sliceArr = ["apple", "banana", "cherry", "berry", "carry"];
 
-// Slicing (start-included : end-excluded)
+// Slicing (start-included : end-excluded), returns new array
 console.log(sliceArr.slice(0, 1)); // ['apple']
 console.log(sliceArr.slice(1, 2)); // ['banana']
 
-// slicing (start-included : n)
+// slicing (start-included : n) , returns new array
 console.log(sliceArr.slice(1)); // ['banana', 'cherry', 'berry', 'carry']
 
-// slicing (0: end-excluded)
+// slicing (0: end-excluded) ,returns new array
 console.log(sliceArr.slice(0, 2)); // ['apple', 'banana']
 
-// slicing-reverse (0: end-included)
+// slicing-reverse (0: end-included), returns new array
 console.log(sliceArr.slice(0, -1)); // ['apple', 'banana', 'cherry', 'berry']
 
-// slicing-reverse (start-excluded : end-included)
+// slicing-reverse (start-excluded : end-included), returns new array
 console.log(sliceArr.slice(-3, -1)); // ['cherry', 'berry'] 

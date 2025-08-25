@@ -27,11 +27,6 @@ class Solution:
         while read < len(chars):
             count = 0
             curr = chars[read]
-            if chars[read] == curr:
-                read += 1
-                count += 1
-            else:
-                curr
 
             while read < len(chars) and chars[read] == curr:
                 read += 1
