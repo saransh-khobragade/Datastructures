@@ -25,5 +25,9 @@ class Solution:
 s = Solution()
 print(s.maxOperations([1, 2, 3, 4, 5], 5))  # Expected: 2
 
+1, 2, 3, 4, 5
+4, 3, 2, 1, 0
+
 # Time complexity: O(n)
 # Space complexity: O(n)
+# Youtube : https://youtu.be/XNsdtSBT3Ek

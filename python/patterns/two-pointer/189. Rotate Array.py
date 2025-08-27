@@ -19,11 +19,13 @@ class Solution:
         start = 0
         end = len(nums) - 1
 
+        # reverse complete array
         while start < end:
             nums[start], nums[end] = nums[end], nums[start]
             start += 1
             end -= 1
 
+        # reverse 0 to k
         start = 0
         end = k - 1
         while start < end:
@@ -31,14 +33,19 @@ class Solution:
             start += 1
             end -= 1
 
+        # reverse k to n-1
         start = k
         end = len(nums) - 1
         while start < end:
             nums[start], nums[end] = nums[end], nums[start]
             start += 1
             end -= 1
-        # print(nums)
+        return nums
 
 
 s = Solution()
-s.rotate([1, 2, 3, 4, 5, 6], 2)
+print(s.rotate([1, 2, 3, 4, 5, 6], 2))
+
+# Time complexity: O(n)
+# Space complexity: O(1)
+# Youtube : https://youtu.be/NxpY0P3gcRA
