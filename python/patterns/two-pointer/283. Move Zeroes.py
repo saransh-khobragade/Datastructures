@@ -27,4 +27,4 @@ print(s.moveZeroes([0, 1, 0, 3, 12]))
 
 # Time complexity: O(n)
 # Space complexity: O(1)
-# explaination video https://youtu.be/kdgWM42bY4E
+# Youtube: https://youtu.be/kdgWM42bY4E

@@ -28,4 +28,4 @@ print(s.isSubsequence("abc", "ahbgdc"))
 
 # Time complexity: O(n)
 # Space complexity: O(1)
-# explaination video https://youtu.be/ZGrk5rLYzPs
+# Youtube: https://youtu.be/ZGrk5rLYzPs
