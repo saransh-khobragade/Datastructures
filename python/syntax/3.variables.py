@@ -9,6 +9,7 @@ tupple = ("apple", "banana", "cherry")
 hash_map = {"name": "John", "age": 36}
 set = {"apple", "banana", "cherry"}
 infinite = float("inf")
+negativeInfinite = float("-inf")
 
 print(integer)  # 12
 print(str)  # Saransh
@@ -20,3 +21,4 @@ print(tupple)  # ('apple', 'banana', 'cherry')
 print(hash_map)  # {'name': 'John', 'age': 36}
 print(set)  # {'banana', 'apple', 'cherry'}
 print(infinite)  # inf
+print(negativeInfinite)  # inf
