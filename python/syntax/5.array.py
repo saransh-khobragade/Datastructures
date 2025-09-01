@@ -29,7 +29,7 @@ print(
 arr.pop(0)
 print(arr)  # ['potatoe', 'cherry', 'berry', 'carry', 'pineapple', 'kiwi', 'orange']
 
-# Sort list
+# Sort list (but does not return anything, it modify original array)
 arr.sort()
 print(arr)  # ['berry', 'carry', 'cherry', 'kiwi', 'orange', 'pineapple', 'potatoe']
 arr.sort(reverse=True)
