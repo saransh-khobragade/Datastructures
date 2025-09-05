@@ -4,5 +4,12 @@
         "editor.inlineSuggest.enabled": false,
         "editor.formatOnSave": true,
         "editor.tabCompletion": "on"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.inlineSuggest.enabled": false,
+        "editor.formatOnSave": true,
+        "editor.tabCompletion": "on",
+        "editor.indentSize": 4
     }
 }
