@@ -12,7 +12,8 @@
                 "<node_internals>/**"
             ],
             "type": "node",
-            "console": "integratedTerminal"
+            "outputCapture": "std"
+            // "console": "integratedTerminal"
 
         },
         {
