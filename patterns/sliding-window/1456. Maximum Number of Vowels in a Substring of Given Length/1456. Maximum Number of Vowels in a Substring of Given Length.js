@@ -6,19 +6,30 @@ Output: 3
 Explanation: The substring "iii" contains 3 vowel letters.
  */
 var maxVowels = function (s, k) {
-    vowels = ["a", "e", "i", "o", "u"];
-    let i = 0;
-    let j = 0;
+    const vowels = new Set(["a", "e", "i", "o", "u"]);
+
     let count = 0;
-    const seen = Set();
+    let maxCount = 0;
+
+    j = 0;
+    while (j < k) {
+        if (vowels.has(s[j])) {
+            count += 1;
+            maxCount = Math.max(maxCount, count);
+        }
+        j += 1;
+    }
 
     while (j < s.length) {
-        if (j < k) {
-            if (seen.has()) j += 1;
-        } else {
-            i += 1;
-            j += 1;
+        if (vowels.has(s[j - k])) {
+            count -= 1;
         }
+        if (vowels.has(s[j])) {
+            count += 1;
+            maxCount = Math.max(maxCount, count);
+        }
+        j += 1;
     }
+    return maxCount;
 };
-console.log(maxVowels("abciiidef", 3));
+console.log(maxVowels("aeiou", 2));
