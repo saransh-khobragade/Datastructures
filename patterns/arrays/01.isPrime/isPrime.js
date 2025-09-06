@@ -1,4 +1,4 @@
-// 2,
+// 2, 3, 5, 7, 11, 13
 var isPrime = function (n) {
     if (n < 2) return false; //edge case
     if (n === 2) return true; //edge case
