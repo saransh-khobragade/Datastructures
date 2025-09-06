@@ -1,20 +1,24 @@
 class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
-        s = list(s)
-        t = list(t)
-
-        if len(s) == len(t):
-            for x in s:
-                if x not in t:
-                    return False
-                else:
-                    t.remove(x)
-            return True
-        else:
+    def isAnagram(s: str, t: str) -> bool:
+        if len(s) != len(t):
             return False
-        
+
+        hmap1 = {}
+        hmap2 = {}
+
+        for i in range(len(s)):
+            hmap1[s[i]] = hmap1.get(s[i], 0) + 1
+            hmap2[t[i]] = hmap2.get(t[i], 0) + 1
+
+        for ch in hmap1:
+            if hmap1[ch] != hmap2.get(ch, 0):
+                return False
+
+        return True
+
+
 s = Solution()
-print(s.isAnagram("aacc","ccac"))
+print(s.isAnagram("aacc", "ccac"))
 
 """
 Time complexity: O(N)
