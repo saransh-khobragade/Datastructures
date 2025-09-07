@@ -40,17 +40,18 @@ var minWindow = function (s, t) {
             }
             right++;
         } else if (needCount == haveCount) {
-            window = right - left;
-            if (window < min) {
-                start = left;
-                end = right;
-                min = window;
-            }
             if (need[s[left]]) {
                 need[s[left]] -= 1;
                 if (need[s[left]] < have[s[left]]) {
                     needCount--;
                 }
+            }
+            //minimum window calculation
+            window = right - left;
+            if (window < min) {
+                start = left;
+                end = right;
+                min = window;
             }
             left++;
         }
