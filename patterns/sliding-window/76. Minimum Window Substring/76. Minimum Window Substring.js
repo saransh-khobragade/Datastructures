@@ -3,38 +3,62 @@ Given two strings s and t of lengths m and n respectively, return the minimum wi
 The testcases will be generated such that the answer is unique.
 */
 var minWindow = function (s, t) {
-    let acciiArr = Array(26).fill(0);
-    for (let i = 0; i < t.length; i++) {
-        let acciiIndex = t[i].charCodeAt(0) - 65;
-        acciiArr[acciiIndex] += 1;
-    }
+    let have = {};
+    let need = {};
 
-    tmax = acciiArr.reduce((a, c) => a + c, 0);
-    smax = 0;
+    let haveCount = 0;
+    let needCount = 0;
+
+    for (let i = 0; i < t.length; i++) {
+        if (have[t[i]]) {
+            have[t[i]] += 1;
+        } else {
+            have[t[i]] = 1;
+            haveCount++;
+        }
+    }
 
     let left = 0;
     let right = 0;
 
-    while (right < s.length) {
-        if (smax < tmax) {
-            let asciiIndex = s[right].charCodeAt(0) - 65;
-            if (acciiArr[asciiIndex] > 0) {
-                smax += 1;
-            }
-            right += 1;
-        } else {
-            while (smax == tmax) {
-                let asciiIndex = s[left].charCodeAt(0) - 65;
-                if (acciiArr[asciiIndex] > 0) {
-                    smax -= 1;
+    let window = 0; //minimum window
+    let min = Infinity;
+    let start = 0;
+    let end = 0;
+
+    while (right <= s.length) {
+        if (needCount < haveCount) {
+            if (have[s[right]]) {
+                if (need[s[right]]) {
+                    need[s[right]] += 1;
+                } else {
+                    need[s[right]] = 1;
                 }
-                left += 1;
+                if (need[s[right]] == have[s[right]]) {
+                    needCount++;
+                }
             }
+            right++;
+        } else if (needCount == haveCount) {
+            window = right - left;
+            if (window < min) {
+                start = left;
+                end = right;
+                min = window;
+            }
+            if (need[s[left]]) {
+                need[s[left]] -= 1;
+                if (need[s[left]] < have[s[left]]) {
+                    needCount--;
+                }
+            }
+            left++;
         }
     }
-    return s.slice(left, right);
+    return s.slice(start, end);
 };
-console.log(minWindow("ADOBECODEBANC", "ABC"));
+
+console.log(minWindow("ADOBECODEBANC", "ABC")); // "BANC"
 
 // 0    1   2   3   4   5   6   7   8   9   10  11  12
 // A    D   O   B   E   C   O   D   E   B   A   N   C
