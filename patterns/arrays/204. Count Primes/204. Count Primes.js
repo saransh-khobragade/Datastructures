@@ -32,5 +32,5 @@ console.log(countPrimes(10)); // 4
 //3 [ false,  false,  true,   true,   false,  true,   false,  true,   false,  false]
 
 //Sieve of Eratosthenes
-//Time complexity : O(n log log n)
+//Time complexity : O(n log(log(n)))
 //Space complexity : O(n)
