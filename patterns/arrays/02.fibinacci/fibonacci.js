@@ -17,4 +17,5 @@ console.log(fibonacci(5)); //5
 console.log(fibonacci(6)); //8
 console.log(fibonacci(7)); //13
 
-//Time complexity : O(n)
+//Time complexity : O(2^n)
+//Space Complexity : O(n)
