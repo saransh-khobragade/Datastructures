@@ -20,3 +20,4 @@ console.log(5, isPrime(5));
 console.log(6, isPrime(6));
 
 //Time complexity : O(log(N))
+//Youtube : https://www.youtube.com/watch?v=QBpgnlWB4ZQ

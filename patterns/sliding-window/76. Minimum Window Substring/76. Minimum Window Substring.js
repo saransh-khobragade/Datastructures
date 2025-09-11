@@ -65,6 +65,14 @@ console.log(minWindow("ADOBECODEBANC", "ABC")); // "BANC"
 //                          O   D   E   B   A   N   C
 //                                      B   A   N   C
 
+// Time Complexity : O(n)
+// Space Comlexity : O(1)
+// Youtube : https://www.youtube.com/watch?v=5TB94-1Yh04
+//
+//
+//
+//
+//
 //
 //METHOD2 - WITH HASHMAP METHOD
 
