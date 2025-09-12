@@ -1,15 +1,12 @@
-// 2352. Equal Row and Column Pairs
-// LeetCode Problem: https://leetcode.com/problems/equal-row-and-column-pairs/
-
+/**
+ * Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj)
+ * such that row ri and column cj are equal.
+ *
+ * A row and column pair is considered equal if they contain the same elements
+ * in the same order (i.e., an equal array).
+ */
 class Solution {
     equalPairs(grid) {
-        /**
-         * Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj) 
-         * such that row ri and column cj are equal.
-         * 
-         * A row and column pair is considered equal if they contain the same elements 
-         * in the same order (i.e., an equal array).
-         */
         const rowHmap = {};
         const colHmap = {};
         let count = 0;
@@ -45,7 +42,13 @@ class Solution {
 }
 
 const s = new Solution();
-console.log(s.equalPairs([[3, 2, 1], [1, 7, 6], [2, 7, 7]])); // 1
+console.log(
+    s.equalPairs([
+        [3, 2, 1],
+        [1, 7, 6],
+        [2, 7, 7],
+    ])
+); // 1
 
 // Time complexity: O(n^2)
 // Space complexity: O(n^2)
