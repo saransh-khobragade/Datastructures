@@ -1,13 +1,11 @@
-// 392. Is Subsequence
-// LeetCode Problem: https://leetcode.com/problems/is-subsequence/
+/**
+ * Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+ * A subsequence of a string is a new string that is formed from the original string by deleting some
+ * (can be none) of the characters without disturbing the relative positions of the remaining characters.
+ */
 
 class Solution {
     isSubsequence(s, t) {
-        /**
-         * Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
-         * A subsequence of a string is a new string that is formed from the original string by deleting some 
-         * (can be none) of the characters without disturbing the relative positions of the remaining characters.
-         */
         let i = 0;
         let j = 0;
 
@@ -32,3 +30,4 @@ console.log(s.isSubsequence("abc", "ahbgdc")); // true
 
 // Time complexity: O(n)
 // Space complexity: O(1)
+// Youtube : https://youtu.be/tu3Mi2UfQ_Q

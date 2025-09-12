@@ -1,13 +1,11 @@
-// 1679. Max Number of K-Sum Pairs
-// LeetCode Problem: https://leetcode.com/problems/max-number-of-k-sum-pairs/
+/**
+ * You are given an integer array nums and an integer k.
+ * In one operation, you can pick two numbers from the array whose sum equals k and remove them from the array.
+ * Return the maximum number of operations you can perform on the array.
+ */
 
 class Solution {
     maxOperations(nums, k) {
-        /**
-         * You are given an integer array nums and an integer k.
-         * In one operation, you can pick two numbers from the array whose sum equals k and remove them from the array.
-         * Return the maximum number of operations you can perform on the array.
-         */
         const map = {};
         let ops = 0;
 
