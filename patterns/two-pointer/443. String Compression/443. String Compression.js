@@ -7,51 +7,48 @@
  * Note that group lengths that are 10 or longer will be split into multiple characters in chars.
  * After you are done modifying the input array, return the new length of the array.
  */
-class Solution {
-    compress(chars) {
-        if (chars.length === 0) {
-            return 0;
-        }
-        if (chars.length === 1) {
-            return 1;
-        }
-
-        let read = 0;
-        let write = 0;
-
-        while (read < chars.length) {
-            let count = 0;
-            const curr = chars[read];
-
-            while (read < chars.length && chars[read] === curr) {
-                read++;
-                count++;
-            }
-
-            chars[write] = curr;
-            write++;
-
-            if (count > 1) {
-                if (count < 10) {
-                    chars[write] = count.toString();
-                    write++;
-                } else {
-                    const countStr = count.toString();
-                    for (let i = 0; i < countStr.length; i++) {
-                        chars[write + i] = countStr[i];
-                    }
-                    write += countStr.length;
-                }
-            }
-        }
-
-        return write;
+var compress = function (chars) {
+    if (chars.length === 0) {
+        return 0;
     }
-}
+    if (chars.length === 1) {
+        return 1;
+    }
 
-const s = new Solution();
+    let read = 0;
+    let write = 0;
+
+    while (read < chars.length) {
+        let count = 0;
+        const curr = chars[read];
+
+        while (read < chars.length && chars[read] === curr) {
+            read++;
+            count++;
+        }
+
+        chars[write] = curr;
+        write++;
+
+        if (count > 1) {
+            if (count < 10) {
+                chars[write] = count.toString();
+                write++;
+            } else {
+                const countStr = count.toString();
+                for (let i = 0; i < countStr.length; i++) {
+                    chars[write + i] = countStr[i];
+                }
+                write += countStr.length;
+            }
+        }
+    }
+
+    return write;
+};
 const v = ["a", "a", "b", "b", "c", "c", "c"];
-console.log(s.compress(v)); //6
+console.log(compress(v)); //6
+//NOTE : argument passed by reference so it changes original array
 console.log(v); // ["a","2","b","2","c","3"]
 
 //const v = ["a", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b", "b"];
@@ -63,5 +60,6 @@ console.log(v); // ["a","2","b","2","c","3"]
 //   'b'
 // ]
 
-// Time complexity: O(n)
+// Time complexity: O(n + log n) = O(n)
 // Space complexity: O(1)
+// Youtube : https://youtu.be/ltXu0LEUPVk
