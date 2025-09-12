@@ -12,6 +12,15 @@
 		"body": [
 			"from typing import List \nclass Solution: \n \tdef abc(self, nums: List[List[int]]) -> int: \n \t\tprint(nums) \ns = Solution() \nprint(s.abc())"
 		],
-		"description": "Log output to console"
+		"description": "Log output to console",
+		
+	},
+	"consolelog":{
+		"scope": "javascript",
+		"prefix": "con",
+		"body": [
+			"console.log()"
+		],
+		"description": "console",
 	}
 }

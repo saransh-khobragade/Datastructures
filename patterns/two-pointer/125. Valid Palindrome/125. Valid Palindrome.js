@@ -16,3 +16,6 @@ var isPalindrome = function (s) {
 };
 
 console.log(isPalindrome("0P"));
+
+//Time complexity : O(n)
+//Youtube : https://youtu.be/tp5LoTIdX1c

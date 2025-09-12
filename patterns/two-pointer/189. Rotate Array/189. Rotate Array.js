@@ -51,3 +51,4 @@ console.log(s.rotate([1, 2, 3, 4, 5, 6], 2)); // [5, 6, 1, 2, 3, 4]
 
 // Time complexity: O(n)
 // Space complexity: O(1)
+// Youtube : https://youtu.be/755FfNJZp6c
