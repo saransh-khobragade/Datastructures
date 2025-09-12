@@ -7,28 +7,43 @@
  */
 class Solution {
     productExceptSelf(nums) {
-        const leftArr = new Array(nums.length).fill(1);
-        const rightArr = new Array(nums.length).fill(1);
+        const n = nums.length;
+        const res = new Array(n).fill(1);
 
+        // first pass: res[i] = product of elements to the left of i
         let left = 1;
-        for (let i = 0; i < nums.length - 1; i++) {
-            leftArr[i] = nums[i] * left;
+        for (let i = 0; i < n; i++) {
+            res[i] = left;
             left *= nums[i];
         }
 
+        // second pass: multiply by product of elements to the right of i
         let right = 1;
-
-        for (let i = nums.length - 1; i >= 0; i--) {
-            rightArr[i] = leftArr[i - 1] * right;
+        for (let i = n - 1; i >= 0; i--) {
+            res[i] *= right;
             right *= nums[i];
         }
 
-        return rightArr;
+        return res;
     }
 }
 
 const s = new Solution();
 console.log(s.productExceptSelf([1, 2, 3, 4])); // [24, 12, 8, 6]
 
+//nums [1, 2, 3, 4]
+
+//res  [1, 1, 1, 1]    left = 1
+//res  [1, 1, 1, 1]    left = 2
+//res  [1, 1, 2, 1]    left = 6
+//res  [1, 1, 2, 6]
+
+//res  [1, 1, 2, 6]    right = 1
+//res  [1, 1, 2, 6]    right = 4
+//res  [1, 1, 8, 6]    right = 12
+//res  [1, 12, 8, 6]   right = 24
+//res  [24,12, 8, 6]
+
 // Time complexity: O(n)
-// Space complexity: O(n)
+// Space complexity: O(1)
+//Youtube : https://youtu.be/5cFDc2nGXuQ
