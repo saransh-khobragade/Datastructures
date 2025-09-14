@@ -1,12 +1,9 @@
-// 1207. Unique Number of Occurrences
-// LeetCode Problem: https://leetcode.com/problems/unique-number-of-occurrences/
-
+/**
+ * Given an array of integers arr, return true if the number of occurrences
+ * of each value in the array is unique or false otherwise.
+ */
 class Solution {
     uniqueOccurrences(arr) {
-        /**
-         * Given an array of integers arr, return true if the number of occurrences 
-         * of each value in the array is unique or false otherwise.
-         */
         const hmap = {};
         for (let x of arr) {
             if (x in hmap) {
@@ -28,3 +25,4 @@ console.log(s.uniqueOccurrences([1, 2, 2, 1, 1, 3])); // true
 
 // Time complexity: O(n)
 // Space complexity: O(n)
+// Youtube : https://youtu.be/i7V4JItSL6w
