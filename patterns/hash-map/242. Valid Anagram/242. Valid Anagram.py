@@ -3,15 +3,23 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        hmap1 = {}
-        hmap2 = {}
+        hmap = {}
 
-        for i in range(len(s)):
-            hmap1[s[i]] = hmap1.get(s[i], 0) + 1
-            hmap2[t[i]] = hmap2.get(t[i], 0) + 1
+        # count chars from s
+        for ch in s:
+            if ch in hmap:
+                hmap[ch] += 1
+            else:
+                hmap[ch] = 1
 
-        for ch in hmap1:
-            if hmap1[ch] != hmap2.get(ch, 0):
+        # reduce counts with t
+        for ch in t:
+            if ch in hmap:
+                hmap[ch] -= 1
+
+        # check all counts
+        for val in hmap.values():
+            if val != 0:
                 return False
 
         return True

@@ -7,28 +7,28 @@
 var isAnagram = function (s, t) {
     if (s.length != t.length) return false;
 
-    hmap1 = {};
-    hmap2 = {};
-    for (let i = 0; i < s.length; i++) {
-        if (hmap1[s[i]]) {
-            hmap1[s[i]] = hmap1[s[i]] + 1;
+    hmap = {};
+    for (let x of s) {
+        if (hmap[x]) {
+            hmap[x] = hmap[x] + 1;
         } else {
-            hmap1[s[i]] = 1;
-        }
-        if (hmap2[t[i]]) {
-            hmap2[t[i]] = hmap2[t[i]] + 1;
-        } else {
-            hmap2[t[i]] = 1;
+            hmap[x] = 1;
         }
     }
-    for (x in hmap1) {
-        if (hmap1[x] !== hmap2[x]) {
+    for (let x of t) {
+        if (hmap[x]) {
+            hmap[x] = hmap[x] - 1;
+        }
+    }
+    let flag = true;
+    for (let x in hmap) {
+        if (hmap[x] !== 0) {
             return false;
         }
     }
-    return true;
+    return flag;
 };
-console.log(isAnagram("aacc", "ccac")); // false
+console.log(isAnagram("rat", "car")); // false
 
 /*
 Time complexity: O(N)
