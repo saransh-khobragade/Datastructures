@@ -1,12 +1,9 @@
-// 347. Top K Frequent Elements
-// LeetCode Problem: https://leetcode.com/problems/top-k-frequent-elements/
-
+/**
+ * Given an integer array nums and an integer k, return the k most frequent elements.
+ * You may return the answer in any order.
+ */
 class Solution {
     topKFrequent(nums, k) {
-        /**
-         * Given an integer array nums and an integer k, return the k most frequent elements. 
-         * You may return the answer in any order.
-         */
         const dic = {};
 
         for (let x of nums) {
@@ -18,7 +15,8 @@ class Solution {
         }
 
         // Sort dictionary by frequency (most frequent first)
-        const out = Object.entries(dic).sort((a, b) => b[1] - a[1]);
+        const objectKeyValues = Object.entries(dic);
+        const out = objectKeyValues.sort((a, b) => b[1] - a[1]);
 
         const result = [];
         for (let item of out) {

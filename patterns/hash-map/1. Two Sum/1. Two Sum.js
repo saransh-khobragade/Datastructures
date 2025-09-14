@@ -14,16 +14,17 @@ class Solution {
         const seen = {};
         for (let i = 0; i < nums.length; i++) {
             if (target - nums[i] in seen) {
-                return [seen[target - nums[i]], i];
+                // return [seen[target - nums[i]], i];
+                console.log([seen[target - nums[i]], i]);
             } else {
-                seen[v] = i;
+                seen[nums[i]] = i;
             }
         }
     }
 }
 
 const s = new Solution();
-console.log(s.twoSum([2, 7, 11, 15], 9)); // [0, 1]
+// console.log(s.twoSum([2, 7, 4, 5], 9)); // [0, 1]
 
 // 0    1   2   3
 // 2    7   11  15
