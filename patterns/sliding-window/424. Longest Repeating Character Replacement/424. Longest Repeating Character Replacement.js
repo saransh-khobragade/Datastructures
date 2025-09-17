@@ -33,4 +33,4 @@ var characterReplacement = function (s, k) {
     }
     return maxLength;
 };
-console.log(characterReplacement("ABAB", 2));
+console.log(characterReplacement("AABABBA", 1));
