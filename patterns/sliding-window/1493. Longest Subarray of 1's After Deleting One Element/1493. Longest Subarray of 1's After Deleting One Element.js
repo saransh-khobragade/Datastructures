@@ -25,4 +25,8 @@ const longestSubarray = function (nums) {
     }
     return maxCount - 1;
 };
-console.log(longestSubarray([0, 1, 1, 1, 0, 0, 1, 1, 0, 1]));
+console.log(longestSubarray([0, 1, 1, 1, 0, 0, 1, 1, 0, 1])); // 3
+
+// Time complexity : O(n)
+// Space complexity : O(1)
+// Youtube : https://youtu.be/R9fMSiEs3OM

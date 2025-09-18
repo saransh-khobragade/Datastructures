@@ -12,6 +12,7 @@ class Solution {
         let maxAvg = -Infinity;
         let avg = 0;
 
+        //create window
         while (end - start < k) {
             currSum += nums[end];
             avg = currSum / k;
@@ -19,6 +20,7 @@ class Solution {
         }
         maxAvg = Math.max(maxAvg, avg);
 
+        //shift window
         while (end < nums.length) {
             currSum -= nums[start];
             currSum += nums[end];
@@ -36,3 +38,4 @@ console.log(s.findMaxAverage([0, 1, 1, 3, 3], 4)); // 2.0
 
 // Time complexity: O(n)
 // Space complexity: O(1)
+// Youtube : https://youtu.be/Xxpf6ahpFI8

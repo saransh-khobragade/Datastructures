@@ -28,3 +28,7 @@ function longestOnes(nums, k) {
     return maxCount;
 }
 console.log(longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2));
+
+// Time complexity : O(n)
+// Space complexity : O(1)
+// Youtube : https://youtu.be/Xxpf6ahpFI8

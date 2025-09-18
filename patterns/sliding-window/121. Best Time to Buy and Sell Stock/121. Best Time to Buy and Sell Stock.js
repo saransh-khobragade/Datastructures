@@ -10,6 +10,7 @@ var maxProfit = function (prices) {
     let left = 0;
     let right = 1;
     let maxProfit = 0;
+
     while (right < prices.length) {
         if (prices[right] > prices[left]) {
             maxProfit = Math.max(maxProfit, prices[right] - prices[left]);
@@ -20,4 +21,8 @@ var maxProfit = function (prices) {
     }
     return maxProfit;
 };
-console.log(maxProfit([1, 9, 0, 9]));
+console.log(maxProfit([1, 9, 0, 9])); // 9
+
+// Time complexity : O(n)
+// Space complexity : O(1)
+// Youtube : https://youtu.be/VUdx8PGyRm0

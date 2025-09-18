@@ -34,3 +34,7 @@ var characterReplacement = function (s, k) {
     return maxLength;
 };
 console.log(characterReplacement("AABABBA", 1));
+
+// Time complexity : O(n)
+// Space complexity : O(1)
+// Youtube : https://youtu.be/VFKDK8oF-vM

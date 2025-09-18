@@ -32,4 +32,8 @@ var maxVowels = function (s, k) {
     }
     return maxCount;
 };
-console.log(maxVowels("aeiou", 2));
+console.log(maxVowels("abciiidef", 3));
+
+// Time complexity : O(n)
+// Space complexity : O(1)
+// Youtube : https://youtu.be/dsvxxtlI4lg

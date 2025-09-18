@@ -19,3 +19,7 @@ var lengthOfLongestSubstring = function (s) {
     return count;
 };
 console.log(lengthOfLongestSubstring("abcabcbb"));
+
+// Time complexity : O(n)
+// Space complexity : O(n)
+// Youtube : https://youtu.be/P89frpj0INY
