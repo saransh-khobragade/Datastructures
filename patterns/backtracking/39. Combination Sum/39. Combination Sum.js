@@ -5,21 +5,21 @@
  * The same number may be chosen from candidates an unlimited number of times.
  */
 
-function combinationSum(candidates, target) {
-    candidates.sort((a, b) => a - b);
+function combinationSum(nums, target) {
     const result = [];
+    nums.sort((a, b) => a - b);
 
-    function backtrack(start, comb, rem) {
-        if (rem === 0) {
-            result.push([...comb]);
+    function backtrack(start, arr, target) {
+        if (target === 0) {
+            result.push([...arr]);
             return;
         }
-        for (let i = start; i < candidates.length; i++) {
-            const val = candidates[i];
-            if (val > rem) break; // prune — candidates sorted
-            comb.push(val);
-            backtrack(i, comb, rem - val); // i (not i+1) allows reuse
-            comb.pop();
+        for (let i = start; i < nums.length; i++) {
+            const val = nums[i];
+            if (val > target) break;
+            arr.push(val);
+            backtrack(i, arr, target - val);
+            arr.pop();
         }
     }
 
@@ -28,6 +28,4 @@ function combinationSum(candidates, target) {
 }
 
 // Example usage
-const candidates = [2, 3, 6, 7];
-const target = 7;
-console.log(combinationSum(candidates, target)); // [[2, 2, 3], [7]]
+console.log(combinationSum([2, 3, 6, 7], 7)); // [[2, 2, 3], [7]]
