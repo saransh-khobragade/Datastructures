@@ -20,3 +20,6 @@ function combine(nums, k) {
 // Example usage:
 console.log(combine([1, 2, 3], 2));
 // Output: [ [1,2], [1,3], [2,3] ]
+
+// Time Complexity: O(C(n,k) · k)
+// Space Complexity: O(k)

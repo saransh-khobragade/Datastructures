@@ -1,31 +1,28 @@
-// 39. Combination Sum
-// LeetCode Problem: https://leetcode.com/problems/combination-sum/
+/**
+ * Given an array of distinct integers candidates and a target integer target,
+ * return a list of all unique combinations of candidates where the chosen numbers
+ * sum to target. You may return the combinations in any order.
+ * The same number may be chosen from candidates an unlimited number of times.
+ */
 
 function combinationSum(candidates, target) {
-    /**
-     * Given an array of distinct integers candidates and a target integer target, 
-     * return a list of all unique combinations of candidates where the chosen numbers 
-     * sum to target. You may return the combinations in any order.
-     * 
-     * The same number may be chosen from candidates an unlimited number of times.
-     */
+    candidates.sort((a, b) => a - b);
     const result = [];
-    
-    function backtrack(start, currentCombination, remainingTarget) {
-        if (remainingTarget === 0) {
-            result.push([...currentCombination]);
+
+    function backtrack(start, comb, rem) {
+        if (rem === 0) {
+            result.push([...comb]);
             return;
         }
-        
         for (let i = start; i < candidates.length; i++) {
-            if (candidates[i] <= remainingTarget) {
-                currentCombination.push(candidates[i]);
-                backtrack(i, currentCombination, remainingTarget - candidates[i]);
-                currentCombination.pop();
-            }
+            const val = candidates[i];
+            if (val > rem) break; // prune — candidates sorted
+            comb.push(val);
+            backtrack(i, comb, rem - val); // i (not i+1) allows reuse
+            comb.pop();
         }
     }
-    
+
     backtrack(0, [], target);
     return result;
 }
