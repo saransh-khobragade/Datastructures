@@ -1,34 +1,32 @@
-// 47. Permutations II
-// LeetCode Problem: https://leetcode.com/problems/permutations-ii/
+/**
+ * Given a collection of numbers, nums, that might contain duplicates,
+ * return all the possible unique permutations in any order.
+ */
 
 function permuteUnique(nums) {
-    /**
-     * Given a collection of numbers, nums, that might contain duplicates, 
-     * return all the possible unique permutations in any order.
-     */
     const result = [];
-    nums.sort((a, b) => a - b); // Sort to handle duplicates
-    
-    function backtrack(currentPermutation, used) {
-        if (currentPermutation.length === nums.length) {
-            result.push([...currentPermutation]);
+
+    function backtrack(start) {
+        if (start === nums.length) {
+            result.push(nums.slice());
             return;
         }
-        
-        for (let i = 0; i < nums.length; i++) {
-            if (used[i] || (i > 0 && nums[i] === nums[i-1] && !used[i-1])) {
-                continue;
+
+        const seen = new Set();
+
+        for (let i = start; i < nums.length; i++) {
+            //to avoid duplicate pairs
+            if (!seen.has(nums[i])) {
+                seen.add(nums[i]);
+
+                [nums[i], nums[start]] = [nums[start], nums[i]];
+                backtrack(start + 1);
+                [nums[i], nums[start]] = [nums[start], nums[i]];
             }
-            
-            used[i] = true;
-            currentPermutation.push(nums[i]);
-            backtrack(currentPermutation, used);
-            currentPermutation.pop();
-            used[i] = false;
         }
     }
-    
-    backtrack([], new Array(nums.length).fill(false));
+
+    backtrack(0);
     return result;
 }
 
