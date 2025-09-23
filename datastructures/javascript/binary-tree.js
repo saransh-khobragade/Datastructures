@@ -1,194 +1,91 @@
-// Binary Tree and Binary Search Tree implementation in JavaScript
-// Includes both simple binary tree and BST with traversal methods
-
-// Simple Binary Tree Node
-class BinaryTreeNode {
-    constructor(data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
-
-    insertLeft(data) {
-        if (this.left === null) {
-            this.left = new BinaryTreeNode(data);
-        } else {
-            const temp = new BinaryTreeNode(data);
-            temp.left = this.left;
-            this.left = temp;
-        }
-    }
-
-    insertRight(data) {
-        if (this.right === null) {
-            this.right = new BinaryTreeNode(data);
-        } else {
-            const temp = new BinaryTreeNode(data);
-            temp.right = this.right;
-            this.right = temp;
-        }
-    }
-
-    getRight() {
-        return this.right;
-    }
-
-    getLeft() {
-        return this.left;
-    }
-
-    getData() {
-        return this.data;
-    }
-}
-
-// Binary Search Tree Node
-class BSTNode {
-    constructor(data) {
-        this.data = data;
+class TreeNode {
+    constructor(val) {
+        this.val = val;
         this.left = null;
         this.right = null;
     }
 }
+class BinaryTree {
+    buildByLevelOrder(levelOrder) {
+        if (!levelOrder || levelOrder.length === 0) return null;
 
-// Binary Search Tree Class
-class BinarySearchTree {
-    constructor() {
-        this.root = null;
+        let root = new TreeNode(levelOrder[0]);
+        let queue = [root];
+        let i = 1;
+
+        while (i < levelOrder.length) {
+            let current = queue.shift();
+
+            // Left child
+            if (i < levelOrder.length && levelOrder[i] !== null) {
+                current.left = new TreeNode(levelOrder[i]);
+                queue.push(current.left);
+            }
+            i++;
+
+            // Right child
+            if (i < levelOrder.length && levelOrder[i] !== null) {
+                current.right = new TreeNode(levelOrder[i]);
+                queue.push(current.right);
+            }
+            i++;
+        }
+
+        return root;
     }
-
-    insert(data) {
-        const newNode = new BSTNode(data);
-        if (!this.root) {
-            this.root = newNode;
+    inOrder(root) {
+        if (root == null) {
             return;
-        }
-        this.insertNode(this.root, newNode);
-    }
-
-    insertNode(node, newNode) {
-        if (newNode.data < node.data) {
-            if (!node.left) {
-                node.left = newNode;
-            } else {
-                this.insertNode(node.left, newNode);
-            }
         } else {
-            if (!node.right) {
-                node.right = newNode;
-            } else {
-                this.insertNode(node.right, newNode);
-            }
+            this.inOrder(root.left);
+            console.log(root.val);
+            this.inOrder(root.right);
         }
     }
-
-    search(data) {
-        return this.searchNode(this.root, data);
-    }
-
-    searchNode(node, data) {
-        if (!node) return null;
-        if (data < node.data) {
-            return this.searchNode(node.left, data);
-        } else if (data > node.data) {
-            return this.searchNode(node.right, data);
+    preOrder(root) {
+        if (root == null) {
+            return;
         } else {
-            return node;
+            console.log(root.val);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
         }
     }
-
-    remove(data) {
-        this.root = this.removeNode(this.root, data);
-    }
-
-    removeNode(node, data) {
-        if (!node) return null;
-        if (data < node.data) {
-            node.left = this.removeNode(node.left, data);
-        } else if (data > node.data) {
-            node.right = this.removeNode(node.right, data);
+    postOrder(root) {
+        if (root == null) {
+            return;
         } else {
-            if (!node.left && !node.right) {
-                return null;
-            } else if (!node.left) {
-                return node.right;
-            } else if (!node.right) {
-                return node.left;
-            } else {
-                const minNode = this.findMin(node.right);
-                node.data = minNode.data;
-                node.right = this.removeNode(node.right, minNode.data);
-            }
+            this.postOrder(root.left);
+            this.postOrder(root.right);
+            console.log(root.val);
         }
-        return node;
     }
-
-    findMin(node) {
-        while (node.left) {
-            node = node.left;
+    levelOrder(root) {
+        if (!root) return;
+        let queue = [root];
+        while (queue.length > 0) {
+            let node = queue.shift();
+            console.log(node.val);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
         }
-        return node;
     }
+    printTree(root, space = 0, levelSpace = 6) {
+        if (!root) return;
 
-    // BST Traversals
-    inOrderTraversal(node = this.root, result = []) {
-        if (node) {
-            this.inOrderTraversal(node.left, result);
-            result.push(node.data);
-            this.inOrderTraversal(node.right, result);
-        }
-        return result;
-    }
+        // print right subtree first (appears on top)
+        this.printTree(root.right, space + levelSpace, levelSpace);
 
-    preOrderTraversal(node = this.root, result = []) {
-        if (node) {
-            result.push(node.data);
-            this.preOrderTraversal(node.left, result);
-            this.preOrderTraversal(node.right, result);
-        }
-        return result;
-    }
+        // print current node
+        console.log(" ".repeat(space) + root.val);
 
-    postOrderTraversal(node = this.root, result = []) {
-        if (node) {
-            this.postOrderTraversal(node.left, result);
-            this.postOrderTraversal(node.right, result);
-            result.push(node.data);
-        }
-        return result;
+        // then left subtree
+        this.printTree(root.left, space + levelSpace, levelSpace);
     }
 }
 
-// Simple Binary Tree Traversal Functions
-function preorder(tree) {
-    if (tree) {
-        console.log(tree.data);
-        preorder(tree.left);
-        preorder(tree.right);
-    }
-}
+let arr = [1, 2, 3, null, 5, null, 4];
+let b = new BinaryTree();
+let root = b.buildByLevelOrder(arr);
 
-function inorder(tree) {
-    if (tree) {
-        inorder(tree.left);
-        console.log(tree.data);
-        inorder(tree.right);
-    }
-}
-
-function postorder(tree) {
-    if (tree) {
-        postorder(tree.left);
-        postorder(tree.right);
-        console.log(tree.data);
-    }
-}
-
-module.exports = { 
-    BinaryTreeNode, 
-    BinarySearchTree, 
-    BSTNode,
-    preorder, 
-    inorder, 
-    postorder 
-}; 
+b.printTree(root);
