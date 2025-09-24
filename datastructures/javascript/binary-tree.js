@@ -1,36 +1,32 @@
 class TreeNode {
-    constructor(val) {
+    constructor(val, left, right) {
         this.val = val;
-        this.left = null;
-        this.right = null;
+        this.left = left;
+        this.right = right;
     }
 }
 class BinaryTree {
-    buildByLevelOrder(levelOrder) {
-        if (!levelOrder || levelOrder.length === 0) return null;
-
-        let root = new TreeNode(levelOrder[0]);
-        let queue = [root];
+    buildByLevelOrder(levelArr) {
+        let start = new TreeNode(levelArr[0], null, null);
         let i = 1;
+        let queue = [start];
 
-        while (i < levelOrder.length) {
-            let current = queue.shift();
+        while (i < levelArr.length) {
+            const curr = queue.shift();
 
-            // Left child
-            if (i < levelOrder.length && levelOrder[i] !== null) {
-                current.left = new TreeNode(levelOrder[i]);
-                queue.push(current.left);
+            if (levelArr[i]) {
+                curr.left = new TreeNode(levelArr[i], null, null);
+                queue.push(curr.left);
             }
-            i++;
+            i += 1;
 
-            // Right child
-            if (i < levelOrder.length && levelOrder[i] !== null) {
-                current.right = new TreeNode(levelOrder[i]);
-                queue.push(current.right);
+            if (levelArr[i]) {
+                curr.right = new TreeNode(levelArr[i], null, null);
+                queue.push(curr.right);
             }
-            i++;
+            i += 1;
         }
-        return root;
+        return start;
     }
     inOrder(root) {
         if (root == null) {

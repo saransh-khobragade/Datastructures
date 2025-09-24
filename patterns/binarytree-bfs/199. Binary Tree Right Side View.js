@@ -24,7 +24,7 @@ function buildTree(root) {
 
         if (root[i]) {
             curr.right = new TreeNode(root[i], null, null);
-            queue.push(root[i]);
+            queue.push(curr.right);
         }
         i += 1;
     }
