@@ -30,7 +30,6 @@ class BinaryTree {
             }
             i++;
         }
-
         return root;
     }
     inOrder(root) {
