@@ -1,4 +1,4 @@
-/**
+/** Sliding window question
 Given an array of strings wordsDict and two strings that already exist in the array word1 and word2, return the shortest distance between the occurrence of these two words in the list.
 Note that word1 and word2 may be the same. It is guaranteed that they represent two individual words in the list.
 Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"], word1 = "makes", word2 = "coding"
