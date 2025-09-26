@@ -3,17 +3,17 @@
 
 function increasingTriplet(nums) {
     /**
-     * Given an integer array nums, return true if there exists a triple of indices (i, j, k) 
-     * such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, 
+     * Given an integer array nums, return true if there exists a triple of indices (i, j, k)
+     * such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists,
      * return false.
      */
     if (nums.length < 3) {
         return false;
     }
-    
+
     let first = Infinity;
     let second = Infinity;
-    
+
     for (let num of nums) {
         if (num <= first) {
             first = num;
@@ -23,13 +23,13 @@ function increasingTriplet(nums) {
             return true;
         }
     }
-    
+
     return false;
 }
 
 // Example usage
 let nums = [1, 2, 3, 4, 5];
-console.log(increasingTriplet(nums)); // true
+// console.log(increasingTriplet(nums)); // true
 
-nums = [5, 4, 3, 2, 1];
+nums = [6, 4, 3, 5, 7];
 console.log(increasingTriplet(nums)); // false
