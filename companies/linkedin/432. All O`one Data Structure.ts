@@ -26,93 +26,93 @@ allOne.getMaxKey(); // return "hello"
 allOne.getMinKey(); // return "leet"
 */
 class DLNode {
-    public count : Number
-    public keys : Set<String>
-    public next : DLNode
-    public prev : DLNode
-    
-    constructor(count:Number) {
+    public count: Number;
+    public keys: Set<String>;
+    public next: DLNode;
+    public prev: DLNode;
+
+    constructor(count: Number) {
         this.count = count;
         this.keys = new Set();
     }
 }
 class AllOne {
-    public head : DLNode
-    public tail : DLNode
-    public hmap : Map<String,DLNode>
-    
-    constructor(node:DLNode,prev:DLNode) {
+    public head: DLNode;
+    public tail: DLNode;
+    public hmap: Map<String, DLNode>;
+
+    constructor(node: DLNode, prev: DLNode) {
         this.head = new DLNode(-Infinity);
         this.tail = new DLNode(Infinity);
-        this.hmap = new Map()
+        this.hmap = new Map();
 
-        this.head.next = this.tail
-        this.tail.prev = this.head
+        this.head.next = this.tail;
+        this.tail.prev = this.head;
     }
 
-    addNextNode(node:DLNode, prev:DLNode){
-         //doubly linked list forward link
-        const saved = prev.next
-        prev.next = node
-        node.next = saved
+    addNextNode(node: DLNode, prev: DLNode) {
+        //doubly linked list forward link
+        const saved = prev.next;
+        prev.next = node;
+        node.next = saved;
         //doubly linked list back link
         node.prev = prev;
         saved.prev = node;
     }
 
-    removeNode(node:DLNode){
-        if(node.prev) node.prev.next = node.next //backlink
-        if(node.next) node.next.prev = node.prev //forward link
+    removeNode(node: DLNode) {
+        if (node.prev) node.prev.next = node.next; //backlink
+        if (node.next) node.next.prev = node.prev; //forward link
     }
 
     inc(key: string): void {
-        if(!this.hmap.has(key)){
+        if (!this.hmap.has(key)) {
             //if hashmap doesn not have key, so new new key will have 1 count
-            if(this.head.next?.count!=1){
-                const newNode = new DLNode(1)
-                this.addNextNode(newNode,this.head)
+            if (this.head.next?.count != 1) {
+                const newNode = new DLNode(1);
+                this.addNextNode(newNode, this.head);
             }
-            this.head.next.keys.add(key)
-            this.hmap.set(key,this.head.next)
-        }else{
-            const node = this.hmap.get(key) as DLNode
-            let saved = node?.next
+            this.head.next.keys.add(key);
+            this.hmap.set(key, this.head.next);
+        } else {
+            const node = this.hmap.get(key) as DLNode;
+            let next = node?.next;
             //if incremented count node not present, then create
-            if(saved.count != node.count as number + 1){
-                const newNode = new DLNode(node.count as number + 1)
-                this.addNextNode(newNode,node)
-                saved = newNode
+            if (next.count != (node.count as number) + 1) {
+                const newNode = new DLNode((node.count as number) + 1);
+                this.addNextNode(newNode, node);
+                next = newNode;
             }
             //updated key
-            saved.keys.add(key)
-            this.hmap.set(key,saved)
+            next.keys.add(key);
+            this.hmap.set(key, next);
 
-            node.keys.delete(key)
-            if(node.keys.size == 0) this.removeNode(node)
+            node.keys.delete(key);
+            if (node.keys.size == 0) this.removeNode(node);
         }
     }
 
     dec(key: string): void {
         const node = this.hmap.get(key)!;
 
-    if (node.count === 1) {
-      // remove key entirely
-      this.hmap.delete(key);
-      node.keys.delete(key);
-      if (node.keys.size === 0) this.removeNode(node);
-    } else {
-      let prev = node.prev!;
-      if (prev.count !== node.count as number - 1) {
-        const newNode = new DLNode(node.count as number - 1);
-        this.addNextNode(newNode, prev);
-        prev = newNode;
-      }
-      prev.keys.add(key);
-      this.hmap.set(key, prev);
+        if (node.count === 1) {
+            // remove key entirely
+            this.hmap.delete(key);
+            node.keys.delete(key);
+            if (node.keys.size === 0) this.removeNode(node);
+        } else {
+            let prev = node.prev!;
+            if (prev.count !== (node.count as number) - 1) {
+                const newNode = new DLNode((node.count as number) - 1);
+                this.addNextNode(newNode, prev);
+                prev = newNode;
+            }
+            prev.keys.add(key);
+            this.hmap.set(key, prev);
 
-      node.keys.delete(key);
-      if (node.keys.size === 0) this.removeNode(node);
-    }
+            node.keys.delete(key);
+            if (node.keys.size === 0) this.removeNode(node);
+        }
     }
 
     getMaxKey(): string {
