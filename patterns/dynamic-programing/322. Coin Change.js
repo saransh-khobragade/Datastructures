@@ -7,21 +7,18 @@ Output: 3
 Explanation: 11 = 5 + 5 + 1
 */
 var coinChange = function (coins, amount) {
-    const INF = Number.MAX_SAFE_INTEGER;
-    const dp = new Array(amount + 1).fill(INF);
+    const dp = Array(amount + 1).fill(Number.MAX_SAFE_INTEGER);
     dp[0] = 0;
 
-    // For each amount, try every coin
-    for (let i = 1; i <= amount; i++) {
-        for (let coin of coins) {
-            if (coin <= i && dp[i - coin] !== INF) {
+    for (let i = 1; i < amount + 1; i++) {
+        for (coin of coins) {
+            if (i >= coin) {
                 dp[i] = Math.min(dp[i], dp[i - coin] + 1);
             }
         }
     }
-
-    return dp[amount] === INF ? -1 : dp[amount];
+    return dp[amount] == Number.MAX_SAFE_INTEGER ? -1 : dp[amount];
 };
-console.log(coinChange([1, 2, 5], 11));
+console.log(coinChange([2], 3));
 
 //https://www.youtube.com/watch?v=koE9ly1CFDc
