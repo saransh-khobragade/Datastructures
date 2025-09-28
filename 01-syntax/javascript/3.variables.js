@@ -6,7 +6,9 @@ const bool = true;
 const nullValue = null;
 
 // Multiple declaration
-const a = "Orange", b = "Banana", c = "Cherry";
+const a = "Orange",
+    b = "Banana",
+    c = "Cherry";
 
 // Arrays
 const arr = ["apple", "banana", "cherry"];
@@ -17,7 +19,7 @@ const tuple = ["apple", "banana", "cherry"];
 // Object (HashMap equivalent)
 const hashMap = {
     name: "John",
-    age: 36
+    age: 36,
 };
 
 // Set
@@ -35,4 +37,5 @@ console.log(arr); // ['apple', 'banana', 'cherry']
 console.log(tuple); // ['apple', 'banana', 'cherry']
 console.log(hashMap); // { name: 'John', age: 36 }
 console.log(set); // Set { 'apple', 'banana', 'cherry' }
-console.log(infinite); // Infinity 
+console.log(infinite); // Infinity
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991
