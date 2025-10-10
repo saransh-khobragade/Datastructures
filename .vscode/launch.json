@@ -22,6 +22,19 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Typescript",
+            "program": "${file}",
+            "request": "launch",
+            "runtimeArgs": [
+                "tsx",
+            ],
+            "runtimeExecutable": "npx",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
         }
     ]
 }
