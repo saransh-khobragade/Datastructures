@@ -31,7 +31,10 @@ var search = function (nums, target) {
     }
     return -1;
 };
+//left rotated
 // console.log(search([4, 5, 6, 7, 0, 1, 2], 0));
+
+//right rotated
 console.log(search([5, 6, 1, 3, 4], 6));
 
 //0, 1, 2, 3, 4, 5, 6
