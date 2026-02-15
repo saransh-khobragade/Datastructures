@@ -8,13 +8,30 @@ Return true if s is a valid string, and false otherwise.
 
 * */
 package pattern.stack;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 class ValidParentheses {
     public static void main(String[] args) {
         ValidParentheses s = new ValidParentheses();
-        s.isValid("abc");
+        s.isValid("[[])");
     }
     public boolean isValid(String s) {
-        System.out.println(s);
+        Stack st = new Stack();
+
+        for(Character c : s.toCharArray()){
+            if(c == '(' || c == '{' || c == '['){
+                st.push(c);
+            }else{
+                if(c == ')' ){
+                    st.pop();
+                }else{
+                    break;
+                }
+            }
+        }
         return true;
     }
 }
