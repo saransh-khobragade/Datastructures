@@ -1,4 +1,5 @@
 /*
+https://leetcode.com/problems/valid-parentheses/description/
 You are given a string s consisting of the following characters: '(', ')', '{', '}', '[' and ']'.
 The input string s is valid if and only if:
 Every open bracket is closed by the same type of close bracket.
@@ -16,22 +17,26 @@ import java.util.Stack;
 class ValidParentheses {
     public static void main(String[] args) {
         ValidParentheses s = new ValidParentheses();
-        s.isValid("[[])");
+        System.out.println(s.isValid("]"));
     }
     public boolean isValid(String s) {
-        Stack st = new Stack();
+        Stack<Character> st = new Stack<>();
 
         for(Character c : s.toCharArray()){
             if(c == '(' || c == '{' || c == '['){
                 st.push(c);
             }else{
-                if(c == ')' ){
+                if(!st.isEmpty() && c == ')' && st.peek() == '('){
+                    st.pop();
+                }else if(!st.isEmpty() && c == '}' && st.peek() == '{'){
+                    st.pop();
+                }else if(!st.isEmpty() && c == ']' && st.peek() == '['){
                     st.pop();
                 }else{
-                    break;
+                    return false;
                 }
             }
         }
-        return true;
+        return st.size() == 0;
     }
 }
