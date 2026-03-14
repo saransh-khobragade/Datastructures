@@ -5,15 +5,12 @@ import syntax.ListNode;
 
 public class ReverseLinkedList {
     public static void main(String[] args){
-        Solution s = new Solution();
+
         int[] input = {1,2,3,4,5};
         ListNode head = LinkedList.build(input);
-        LinkedList.display(s.reverseList(head));
+        LinkedList.display(reverseList(head));
     }
-
-}
-class Solution {
-    public ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
         if (head == null) return head;
         ListNode prev = null;
         ListNode curr = head;
@@ -28,4 +25,5 @@ class Solution {
         curr.next = prev;
         return curr;
     }
+
 }
