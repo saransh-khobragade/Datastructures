@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Java",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "MergeTwoSortedLists",
+            "request": "launch",
+            "mainClass": "pattern.linkedlist.MergeTwoSortedLists",
+            "projectName": "Datastructures_c6c9bcc4"
+        },
+        {
             "name": "node",
             "program": "${file}",
             "request": "launch",
@@ -13,8 +26,6 @@
             ],
             "type": "node",
             "outputCapture": "std"
-            // "console": "integratedTerminal"
-
         },
         {
             "name": "Python",
@@ -28,7 +39,7 @@
             "program": "${file}",
             "request": "launch",
             "runtimeArgs": [
-                "tsx",
+                "tsx"
             ],
             "runtimeExecutable": "npx",
             "skipFiles": [
