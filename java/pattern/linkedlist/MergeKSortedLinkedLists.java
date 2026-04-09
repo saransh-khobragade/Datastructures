@@ -3,6 +3,8 @@ package pattern.linkedlist;
 import syntax.ListNode;
 import syntax.LinkedList;
 
+import java.util.PriorityQueue;
+
 public class MergeKSortedLinkedLists {
     public static void main(String[] args) {
 
@@ -22,6 +24,24 @@ public class MergeKSortedLinkedLists {
     }
 
     public static ListNode mergeKLists(ListNode[] lists) {
-        return null;
+        PriorityQueue<ListNode> result = new PriorityQueue<>((a,b)-> a.val - b.val);
+        ListNode head = new ListNode();
+        ListNode ptr = head;
+
+
+        for(ListNode l : lists){
+            result.add(l);
+        }
+
+        while(result.size()!=0){
+            ListNode l = result.remove();
+            if(l.next!=null){
+                result.add(l.next);
+            }
+            ptr.next =  new ListNode(l.val);
+            ptr = ptr.next;
+        }
+
+        return head.next;
     }
 }
