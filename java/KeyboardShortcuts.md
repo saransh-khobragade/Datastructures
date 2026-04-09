@@ -1,14 +1,14 @@
 Go to reference
-Cmd + click
+    Cmd + click
 Go back
-Cmd + [
+    Cmd + [
 Search file
-Double Shift
+    Double Shift
 Global Text anywhere
-Cmd + Shift + R
+    Cmd + Shift + R
 formatting
-Option + Command + L
+    Option + Command + L
 Rename
-Shift + fn + F6
+    Shift + fn + F6
 Move line
-⌥ (Option) + ⇧ (Shift) + ↑ / ↓
+    ⌥ (Option) + ⇧ (Shift) + ↑ / ↓
