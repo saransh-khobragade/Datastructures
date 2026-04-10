@@ -1,6 +1,6 @@
 package syntax;
 
-public class LinkedList {
+public class LinkedLists {
     public static ListNode build(int[] input){
 
         ListNode head = new ListNode();

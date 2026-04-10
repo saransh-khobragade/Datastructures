@@ -1,6 +1,6 @@
 package pattern.linkedlist;
 
-import syntax.LinkedList;
+import syntax.LinkedLists;
 import syntax.ListNode;
 
 public class LinkedListCycle {
@@ -8,7 +8,7 @@ public class LinkedListCycle {
 
         int[] arr = {3, 2, 0, -4};
 
-        ListNode head = LinkedList.build(arr);
+        ListNode head = LinkedLists.build(arr);
 
 
         System.out.println(hasCycle(head));

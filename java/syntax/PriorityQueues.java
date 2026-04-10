@@ -2,7 +2,7 @@ package syntax;
 
 import java.util.PriorityQueue;
 
-public class PriorityQueueExample {
+public class PriorityQueues {
     public static void main(String[] args) {
         int[] arr1 = {1,2,3};
         int[] arr2 = {8,6,4};

@@ -1,15 +1,15 @@
 package pattern.linkedlist;
 
-import syntax.LinkedList;
+import syntax.LinkedLists;
 import syntax.ListNode;
 
 public class RemoveNthNodeFromEndofList {
     public static void main(String[] args) {
         int[] arr = {1, 2};
-        ListNode head = LinkedList.build(arr);
+        ListNode head = LinkedLists.build(arr);
 
         ListNode result = removeNthFromEnd(head, 2);
-        LinkedList.display(result);
+        LinkedLists.display(result);
     }
 
     public static ListNode removeNthFromEnd(ListNode head, int n) {

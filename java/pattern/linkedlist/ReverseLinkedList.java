@@ -1,14 +1,14 @@
 package pattern.linkedlist;
 
-import syntax.LinkedList;
+import syntax.LinkedLists;
 import syntax.ListNode;
 
 public class ReverseLinkedList {
     public static void main(String[] args){
 
         int[] input = {1,2,3,4,5};
-        ListNode head = LinkedList.build(input);
-        LinkedList.display(reverseList(head));
+        ListNode head = LinkedLists.build(input);
+        LinkedLists.display(reverseList(head));
     }
     public static ListNode reverseList(ListNode head) {
         if (head == null) return head;

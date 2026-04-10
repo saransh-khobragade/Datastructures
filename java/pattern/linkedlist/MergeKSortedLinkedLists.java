@@ -1,7 +1,7 @@
 package pattern.linkedlist;
 
 import syntax.ListNode;
-import syntax.LinkedList;
+import syntax.LinkedLists;
 
 import java.util.PriorityQueue;
 
@@ -13,13 +13,13 @@ public class MergeKSortedLinkedLists {
         int[] list3 = {3, 6};
 
 
-        ListNode l1 = LinkedList.build(list1);
-        ListNode l2 = LinkedList.build(list2);
-        ListNode l3 = LinkedList.build(list3);
+        ListNode l1 = LinkedLists.build(list1);
+        ListNode l2 = LinkedLists.build(list2);
+        ListNode l3 = LinkedLists.build(list3);
 
         ListNode[] input = {l1, l2, l3};
         ListNode result = mergeKLists(input);
-        LinkedList.display(result);
+        LinkedLists.display(result);
 
     }
 

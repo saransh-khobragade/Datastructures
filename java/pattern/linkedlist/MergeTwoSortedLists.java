@@ -6,7 +6,7 @@
 
 package pattern.linkedlist;
 
-import syntax.LinkedList;
+import syntax.LinkedLists;
 import syntax.ListNode;
 
 public class MergeTwoSortedLists {
@@ -14,11 +14,11 @@ public class MergeTwoSortedLists {
         int[] input1 = {-9,3};
         int[] input2 = {5,7};
 
-        ListNode list1 = LinkedList.build(input1);
-        ListNode list2 = LinkedList.build(input2);
+        ListNode list1 = LinkedLists.build(input1);
+        ListNode list2 = LinkedLists.build(input2);
 
         ListNode head = mergeTwoLists(list1,list2);
-        LinkedList.display(head);
+        LinkedLists.display(head);
     }
     public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 

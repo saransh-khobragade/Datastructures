@@ -1,12 +1,12 @@
 package pattern.linkedlist;
 
-import syntax.LinkedList;
+import syntax.LinkedLists;
 import syntax.ListNode;
 
 public class ReorderList {
     public static void main(String[] args) {
         int[] input = {1,2,3,4};
-        ListNode head = LinkedList.build(input);
+        ListNode head = LinkedLists.build(input);
         reorderList(head);
     }
     public static ListNode reverseList(ListNode head){
