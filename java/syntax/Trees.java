@@ -4,29 +4,35 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Trees {
-    public static TreeNode build(int[] input) {
+    public static TreeNode build(Integer[] input) {
 
         Queue<TreeNode> queue = new LinkedList<>();
 
-        TreeNode start = new TreeNode(input[0], null, null);
+        TreeNode root = new TreeNode(input[0], null, null);
 
-        queue.add(start);
+        queue.add(root);
 
         int i = 1;
 
         while (!queue.isEmpty() && i < input.length) {
 
             TreeNode curr = queue.remove();
+            if (input[i] != null) {
+                curr.left = new TreeNode(input[i], null, null);
+                queue.add(curr.left);
+            }
+            i++;
 
-            curr.left = new TreeNode(input[i++], null, null);
-            queue.add(curr.left);
 
+            if (i < input.length && input[i] != null) {
+                curr.right = new TreeNode(input[i], null, null);
+                queue.add(curr.right);
+            }
+            i++;
 
-            curr.right = new TreeNode(input[i++], null, null);
-            queue.add(curr.right);
         }
 
-        return start;
+        return root;
     }
 
     public static void printTree(TreeNode root) {
@@ -45,7 +51,7 @@ public class Trees {
 
 
     public static void main(String[] args) {
-        int[] input = {1, 2, 3, 4, 5, 6, 7};
+        Integer[] input = {1,2,3,null,null,4};
         Trees.build(input);
     }
 }
