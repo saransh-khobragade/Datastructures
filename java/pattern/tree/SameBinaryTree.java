@@ -5,8 +5,8 @@ import syntax.Trees;
 
 public class SameBinaryTree {
     public static void main(String[] args) {
-        Integer[] p1 = {1, 2, 3};
-        Integer[] q1 = {1, 4, 3};
+        Integer[] p1 = {2,4,5,6};
+        Integer[] q1 = {2,4,5};
 
         TreeNode p = Trees.build(p1);
         TreeNode q = Trees.build(q1);
