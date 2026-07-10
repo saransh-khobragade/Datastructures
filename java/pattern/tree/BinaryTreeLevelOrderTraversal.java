@@ -4,6 +4,7 @@ import syntax.TreeNode;
 import syntax.Trees;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -18,21 +19,33 @@ public class BinaryTreeLevelOrderTraversal {
     public static List<List<Integer>> levelOrder(TreeNode root) {
 
 
-        ArrayList level = new ArrayList<Integer>();
-        Queue<TreeNode> queue = new Queue<TreeNode>();
-
-        queue.offer(root);
-        int size = queue.size();
-
-        for (int i = 0; i < size; i++) {
-            if (root.left != null) {
-                queue.offer(root.left);
-            }
-            if (root.right != null) {
-                queue.offer(root.right);
-            }
+        if(root == null){
+            return new ArrayList<>();
         }
 
+        List<List<Integer>> level = new ArrayList<>();
 
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.offer(root);
+
+        while(!queue.isEmpty()){
+            List<Integer> result = new ArrayList<>();
+            int size = queue.size();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode current = queue.poll();
+
+                if (current.left != null) {
+                    queue.offer(current.left);
+                }
+                if (current.right != null) {
+                    queue.offer(current.right);
+                }
+                result.add(current.val);
+            }
+            level.add(result);
+        }
+        return level;
     }
 }
