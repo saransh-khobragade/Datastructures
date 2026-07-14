@@ -4,25 +4,39 @@ import syntax.TreeNode;
 import syntax.Trees;
 
 
-
-
 public class KthSmallestIntegerinBST {
-    public static void main(String[] args) {
-        Integer[] input = {5,3,6,2,4,null,null,1};
-        TreeNode root = Trees.build(input);
-        System.out.println(kthSmallest(root,3));
 
-    }
-    public static int kthSmallest(TreeNode root, int k) {
+    int count = 0;
+    int result = 0;
 
+    public int kthSmallest(TreeNode root, int k) {
+        inOrderMin(root,k);
+        return result;
     }
-    public static int inOrderMin(TreeNode root){
-        if(root == null){
-            return null;
-        }else{
-            inOrderMin(root.left);
-            System.out.println(root.left);
-            inOrderMin(root.right);
+    public void inOrderMin(TreeNode root, int k) {
+        if (root == null) {
+            return;
+        } else {
+
+            inOrderMin(root.left, k);
+
+
+            count++;
+            if (count == k) {
+                result = root.val;
+                return;
+            }
+
+            inOrderMin(root.right, k);
         }
+    }
+}
+
+class Call{
+    public static void main(String[] args) {
+        Integer[] input = {5, 3, 6, 2, 4, null, null, 1};
+        TreeNode root = Trees.build(input);
+        KthSmallestIntegerinBST s = new KthSmallestIntegerinBST();
+        System.out.println(s.kthSmallest(root, 3));
     }
 }
